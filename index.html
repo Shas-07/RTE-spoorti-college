@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RTE's Spoorti PU College – Hulkoti | JEE | NEET | KCET | NDA</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0c1438;
+  --navy-light: #162560;
+  --gold: #c8941a;
+  --gold-light: #e8b84b;
+  --gold-pale: #f5e4b0;
+  --orange: #e85d04;
+  --orange-light: #ff6b1a;
+  --white: #ffffff;
+  --offwhite: #f6f4ef;
+  --surface: #ffffff;
+  --text-dark: #141428;
+  --text-muted: #5c5c78;
+  --shadow-sm: 0 2px 12px rgba(12, 20, 56, 0.06);
+  --shadow-md: 0 12px 40px rgba(12, 20, 56, 0.1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--offwhite);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 999;
+  background: rgba(12, 20, 56, 0.94);
+  backdrop-filter: blur(14px);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%;
+  height: 72px;
+  border-bottom: 1px solid rgba(200, 148, 26, 0.35);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+}
+.nav-logo { display: flex; align-items: center; gap: 14px; }
+.nav-logo .nav-logo-mark {
+  height: 50px; width: 50px; border-radius: 50%;
+  border: 2px solid var(--gold);
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+.nav-logo-text { color: var(--white); }
+.nav-logo-text span { display: block; }
+.nav-logo-text .top { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 2px; color: var(--gold-light); }
+.nav-logo-text .bot { font-size: 10px; letter-spacing: 1px; opacity: 0.7; text-transform: uppercase; }
+.nav-links { display: flex; gap: 30px; list-style: none; }
+.nav-links a { color: rgba(255,255,255,0.82); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.5px; transition: color 0.3s; text-transform: uppercase; }
+.nav-links a:hover { color: var(--gold-light); }
+.nav-cta {
+  background: var(--orange); color: var(--white);
+  padding: 9px 22px; border-radius: 6px;
+  text-decoration: none; font-weight: 600; font-size: 13px;
+  letter-spacing: 0.5px;
+  transition: background 0.3s, transform 0.2s;
+}
+.nav-cta:hover { background: var(--orange-light); transform: translateY(-1px); }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #060c30 0%, #0f1952 40%, #1a2870 70%, #0a0f35 100%);
+  position: relative; overflow: hidden;
+  display: flex; align-items: center;
+  padding-top: 72px;
+}
+
+.hero-grid-bg {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(200,148,26,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,148,26,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-glow {
+  position: absolute;
+  width: 700px; height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,148,26,0.15) 0%, transparent 70%);
+  top: -100px; right: -100px; pointer-events: none;
+}
+.hero-glow2 {
+  position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,93,4,0.12) 0%, transparent 70%);
+  bottom: -100px; left: -100px; pointer-events: none;
+}
+
+.hero-inner {
+  position: relative; z-index: 2;
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 5%;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 60px; align-items: center;
+}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(200,148,26,0.15);
+  border: 1px solid rgba(200,148,26,0.4);
+  color: var(--gold-light);
+  padding: 7px 16px; border-radius: 30px;
+  font-size: 12px; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; margin-bottom: 24px;
+  animation: fadeUp 0.8s ease both;
+}
+.hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold-light); animation: pulse 1.5s infinite; }
+
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:none} }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+.hero-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 900; color: var(--white);
+  line-height: 1.1; margin-bottom: 12px;
+  animation: fadeUp 0.8s 0.15s ease both;
+}
+.hero-h1 .gold { color: var(--gold-light); }
+
+.hero-sub {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  letter-spacing: 4px; color: rgba(255,255,255,0.55);
+  margin-bottom: 20px;
+  animation: fadeUp 0.8s 0.25s ease both;
+}
+
+.hero-desc {
+  color: rgba(255,255,255,0.72); font-size: 16px; line-height: 1.75;
+  margin-bottom: 36px;
+  animation: fadeUp 0.8s 0.35s ease both;
+}
+
+.hero-tags {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px;
+  animation: fadeUp 0.8s 0.45s ease both;
+}
+.hero-tag {
+  background: rgba(232,93,4,0.18); border: 1px solid rgba(232,93,4,0.5);
+  color: #ffaa66; padding: 6px 16px; border-radius: 20px;
+  font-size: 13px; font-weight: 600; letter-spacing: 0.5px;
+}
+
+.hero-btns { display: flex; gap: 16px; flex-wrap: wrap; animation: fadeUp 0.8s 0.55s ease both; }
+.btn-primary {
+  background: linear-gradient(135deg, var(--orange), var(--orange-light));
+  color: var(--white); padding: 15px 32px; border-radius: 8px;
+  text-decoration: none; font-weight: 700; font-size: 15px;
+  box-shadow: 0 8px 25px rgba(232,93,4,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(232,93,4,0.5); }
+.btn-secondary {
+  border: 2px solid rgba(200,148,26,0.5); color: var(--gold-light);
+  padding: 13px 28px; border-radius: 8px;
+  text-decoration: none; font-weight: 600; font-size: 15px;
+  transition: all 0.3s;
+}
+.btn-secondary:hover { background: rgba(200,148,26,0.1); border-color: var(--gold-light); }
+
+/* Hero right – floating card */
+.hero-right { animation: fadeIn 1s 0.5s ease both; }
+
+.hero-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(200,148,26,0.3);
+  border-radius: 20px; padding: 36px;
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+.hero-card::before {
+  content: ''; position: absolute;
+  top: -1px; left: 30px; right: 30px; height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  border-radius: 2px;
+}
+
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
+.stat-box {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px; padding: 20px; text-align: center;
+}
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem; color: var(--gold-light);
+  line-height: 1;
+}
+.stat-label { font-size: 11px; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+.exam-badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.exam-badge {
+  background: linear-gradient(135deg, rgba(200,148,26,0.25), rgba(200,148,26,0.1));
+  border: 1px solid rgba(200,148,26,0.5);
+  color: var(--gold-pale); padding: 8px 18px; border-radius: 30px;
+  font-size: 13px; font-weight: 700; letter-spacing: 1px;
+}
+
+/* ── SECTION SHARED ── */
+section { padding: 90px 5%; }
+.section-label {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--orange); margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 900; line-height: 1.15;
+  margin-bottom: 16px;
+}
+.section-desc { color: var(--text-muted); font-size: 16px; line-height: 1.75; max-width: 580px; }
+.max-w { max-width: 1200px; margin: 0 auto; }
+
+/* ── ABOUT ── */
+#about { background: var(--white); }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1.2fr;
+  gap: 70px; align-items: center;
+}
+.about-left .section-title { color: var(--navy); }
+
+.legacy-band {
+  display: flex; align-items: center; gap: 20px;
+  background: linear-gradient(135deg, #0f1952, #1a2870);
+  border-radius: 16px; padding: 24px 28px;
+  margin-top: 32px;
+  border-left: 4px solid var(--gold);
+}
+.legacy-avatar {
+  width: 76px; height: 76px; border-radius: 50%;
+  border: 3px solid var(--gold);
+  overflow: hidden; flex-shrink: 0;
+  background: linear-gradient(135deg, #2a3880, #0f1952);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+.legacy-avatar-img {
+  width: 100%; height: 100%; object-fit: cover;
+  object-position: center top;
+  filter: sepia(12%) brightness(1.04);
+}
+.legacy-avatar-icon { font-size: 28px; }
+.legacy-text .legacy-late {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
+  color: var(--gold-light); opacity: 0.95; margin-bottom: 4px;
+}
+.legacy-text .name { font-weight: 700; color: var(--gold-light); font-size: 15px; }
+.legacy-text .role { color: rgba(255,255,255,0.55); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+.legacy-text .quote { color: rgba(255,255,255,0.8); font-size: 13px; margin-top: 6px; font-style: italic; line-height: 1.5; }
+
+.about-right-cards { display: flex; flex-direction: column; gap: 20px; }
+.about-card {
+  display: flex; gap: 18px; align-items: flex-start;
+  padding: 22px 24px;
+  border: 1px solid rgba(15,25,82,0.1);
+  border-radius: 14px;
+  transition: all 0.3s;
+}
+.about-card:hover { background: var(--offwhite); border-color: rgba(200,148,26,0.3); transform: translateX(6px); }
+.about-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0;
+}
+.about-card h4 { font-weight: 700; font-size: 15px; margin-bottom: 4px; color: var(--navy); }
+.about-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+/* ── STREAMS ── */
+#streams {
+  background: linear-gradient(180deg, var(--offwhite) 0%, #eef0f8 100%);
+}
+.streams-header { text-align: center; margin-bottom: 56px; }
+.streams-header .section-desc { margin: 0 auto; }
+
+.streams-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.stream-card {
+  background: var(--white);
+  border-radius: 20px; overflow: hidden;
+  box-shadow: 0 4px 20px rgba(15,25,82,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-bottom: 4px solid transparent;
+}
+.stream-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(15,25,82,0.15); }
+.stream-card.pcmb { border-bottom-color: #3b82f6; }
+.stream-card.pcmc { border-bottom-color: var(--orange); }
+.stream-card.pcme { border-bottom-color: #10b981; }
+
+.stream-header {
+  padding: 30px 28px 20px;
+  position: relative;
+}
+.stream-card.pcmb .stream-header { background: linear-gradient(135deg, #1e3a8a, #3b5bdb); }
+.stream-card.pcmc .stream-header { background: linear-gradient(135deg, #7c1d0a, #c0391b); }
+.stream-card.pcme .stream-header { background: linear-gradient(135deg, #064e3b, #059669); }
+
+.stream-combo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem; color: var(--white); letter-spacing: 3px;
+}
+.stream-full { color: rgba(255,255,255,0.65); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 2px; }
+.stream-body { padding: 24px 28px; }
+.stream-body h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 14px; }
+.subject-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.subject-pill {
+  padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;
+  border: 1px solid;
+}
+.pcmb .subject-pill { background: #eff6ff; border-color: #bfdbfe; color: #1e40af; }
+.pcmc .subject-pill { background: #fff7ed; border-color: #fed7aa; color: #c2410c; }
+.pcme .subject-pill { background: #ecfdf5; border-color: #a7f3d0; color: #065f46; }
+
+.stream-exams { display: flex; gap: 8px; flex-wrap: wrap; }
+.stream-exam {
+  padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 700;
+  background: var(--navy); color: var(--gold-light); letter-spacing: 0.5px;
+}
+
+/* ── WHY JOIN ── */
+#why { background: var(--navy); position: relative; overflow: hidden; }
+#why::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 20% 50%, rgba(200,148,26,0.08) 0%, transparent 60%),
+                    radial-gradient(circle at 80% 20%, rgba(232,93,4,0.08) 0%, transparent 50%);
+}
+#why .section-title { color: var(--white); }
+#why .section-label { color: var(--gold-light); }
+#why .section-desc { color: rgba(255,255,255,0.6); }
+.why-grid-wrap { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: start; }
+.why-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.why-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; padding: 28px 24px;
+  transition: all 0.3s; position: relative; overflow: hidden;
+}
+.why-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--gold); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s;
+}
+.why-card:hover::before { transform: scaleX(1); }
+.why-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(200,148,26,0.3); }
+.why-icon { font-size: 32px; margin-bottom: 14px; }
+.why-card h3 { color: var(--white); font-weight: 700; font-size: 15px; margin-bottom: 8px; }
+.why-card p { color: rgba(255,255,255,0.55); font-size: 13px; line-height: 1.65; }
+
+/* ── LEADERSHIP ── */
+#leadership { background: var(--white); }
+.leadership-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px; max-width: 880px; margin: 0 auto; }
+.leader-card {
+  text-align: center; padding: 40px 30px;
+  background: var(--surface);
+  border: 1px solid rgba(15,25,82,0.08); border-radius: 22px;
+  transition: all 0.35s ease; position: relative; overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.leader-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--navy), var(--gold));
+}
+.leader-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); border-color: rgba(200, 148, 26, 0.25); }
+.leader-avatar {
+  width: 120px; height: 120px; border-radius: 50%;
+  background: linear-gradient(135deg, #1a2870, #0f1952);
+  margin: 0 auto 22px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 36px;
+  border: 4px solid var(--gold);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(15, 25, 82, 0.15);
+}
+.leader-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.leader-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.leader-role { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.leader-org { font-size: 12px; color: var(--text-muted); }
+.leader-late {
+  display: inline-block; background: #fef3c7; color: #92400e;
+  font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 10px; margin-bottom: 8px;
+}
+
+/* ── ADMISSIONS ── */
+#admissions {
+  background: linear-gradient(135deg, #0f1952 0%, #1a2870 50%, #0a0f35 100%);
+  position: relative; overflow: hidden;
+}
+.admit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.admit-left .section-title { color: var(--white); }
+.admit-left .section-label { color: var(--gold-light); }
+.admit-left .section-desc { color: rgba(255,255,255,0.65); }
+
+.process-steps { margin-top: 36px; display: flex; flex-direction: column; gap: 16px; }
+.step {
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.step-num {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--gold); color: var(--navy);
+  font-weight: 900; font-size: 14px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.step-text h4 { color: var(--white); font-weight: 600; font-size: 15px; margin-bottom: 2px; }
+.step-text p { color: rgba(255,255,255,0.55); font-size: 13px; }
+
+.admit-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(200,148,26,0.3);
+  border-radius: 20px; padding: 36px;
+}
+.admit-card h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold-light); font-size: 22px; margin-bottom: 24px;
+}
+.benefit-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.benefit-list li {
+  display: flex; gap: 12px; align-items: center;
+  color: rgba(255,255,255,0.8); font-size: 14px;
+}
+.benefit-list li .check {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: rgba(200,148,26,0.2); border: 1px solid var(--gold);
+  color: var(--gold-light); font-size: 12px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+
+/* ── LOCATION ── */
+#location { background: var(--offwhite); }
+.location-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.map-placeholder {
+  border-radius: 16px; overflow: hidden;
+  border: 2px solid rgba(15,25,82,0.15);
+  height: 340px; background: #e5e7eb;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 12px; color: var(--text-muted);
+  font-size: 15px;
+}
+.map-wrap { position: relative; }
+.map-frame {
+  width: 100%; height: 360px; border: none; border-radius: 18px;
+  border: 2px solid rgba(15,25,82,0.12);
+  box-shadow: var(--shadow-md);
+}
+.map-open-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 14px;
+  padding: 10px 18px;
+  background: var(--navy);
+  color: var(--gold-light) !important;
+  font-size: 13px; font-weight: 600;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background 0.25s, transform 0.2s;
+}
+.map-open-link:hover { background: var(--navy-light); transform: translateY(-1px); }
+
+.contact-info { display: flex; flex-direction: column; gap: 20px; }
+.contact-card {
+  background: var(--white); border-radius: 14px; padding: 22px 24px;
+  border: 1px solid rgba(15,25,82,0.08);
+  display: flex; gap: 16px; align-items: flex-start;
+  transition: all 0.3s;
+}
+.contact-card:hover { border-color: rgba(200,148,26,0.4); transform: translateX(4px); }
+.contact-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: var(--navy); color: var(--gold-light);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.contact-card h4 { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
+.contact-card p, .contact-card a { color: var(--navy); font-weight: 600; font-size: 15px; text-decoration: none; display: block; line-height: 1.6; }
+.contact-card a:hover { color: var(--orange); }
+
+/* ── FOOTER ── */
+footer {
+  background: #060c30;
+  color: rgba(255,255,255,0.55);
+  text-align: center; padding: 40px 5%;
+}
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem; color: var(--gold-light); letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+footer p { font-size: 13px; }
+.footer-divider { height: 1px; background: rgba(255,255,255,0.08); margin: 20px 0; }
+.footer-links { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; }
+.footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 12px; letter-spacing: 0.5px; transition: color 0.3s; }
+.footer-links a:hover { color: var(--gold-light); }
+
+/* ── SCROLL REVEAL ── */
+.reveal { opacity: 0; transform: translateY(40px); transition: all 0.7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── FLOATING ENQUIRY ── */
+.float-btn {
+  position: fixed; bottom: 28px; right: 28px; z-index: 998;
+  background: linear-gradient(135deg, var(--orange), var(--orange-light));
+  color: var(--white); padding: 14px 24px; border-radius: 50px;
+  text-decoration: none; font-weight: 700; font-size: 14px;
+  box-shadow: 0 8px 28px rgba(232,93,4,0.5);
+  display: flex; align-items: center; gap: 8px;
+  animation: bouncePop 2s 3s ease both;
+}
+@keyframes bouncePop { 0%{transform:scale(0)} 60%{transform:scale(1.1)} 100%{transform:scale(1)} }
+.float-btn:hover { transform: scale(1.05); }
+
+/* ── ANNOUNCEMENT TICKER ── */
+.ticker {
+  background: var(--gold);
+  color: var(--navy);
+  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 72px;
+}
+.ticker-inner {
+  display: inline-block;
+  animation: scroll-ticker 28s linear infinite;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.5px;
+}
+@keyframes scroll-ticker { from{transform:translateX(100vw)} to{transform:translateX(-100%)} }
+
+/* ── RESPONSIVE ── */
+@media(max-width: 900px) {
+  .hero-inner, .about-grid, .why-grid-wrap, .admit-grid, .location-inner { grid-template-columns: 1fr; gap: 40px; }
+  .streams-grid { grid-template-columns: 1fr; }
+  .leadership-grid { grid-template-columns: 1fr; max-width: 400px; }
+  .why-cards { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .hero-right { display: none; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img class="nav-logo-mark" src="spoorti-assets/college-logo.png" width="50" height="50" alt="RTE Spoorti PU College emblem">
+    <div class="nav-logo-text">
+      <span class="top">Spoorti PU College</span>
+      <span class="bot">Rural Technical Education Society</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#streams">Streams</a></li>
+    <li><a href="#why">Why Join</a></li>
+    <li><a href="#leadership">Leadership</a></li>
+    <li><a href="#admissions">Admissions</a></li>
+    <li><a href="#location">Contact</a></li>
+  </ul>
+  <a href="tel:+917019944673" class="nav-cta">📞 Enquire Now</a>
+</nav>
+
+<!-- ANNOUNCEMENT TICKER -->
+<div class="ticker">
+  <span class="ticker-inner">
+    🎓 Admissions Open 2025-26 &nbsp;|&nbsp; PCMB · PCMC · PCME Streams &nbsp;|&nbsp; Integrated JEE · NEET · KCET · NDA Coaching &nbsp;|&nbsp; Merit-Based Scholarships Available &nbsp;|&nbsp; Free Foundation Course Offered &nbsp;|&nbsp; Call: 7019944673 / 9448023499 / 9742021640 &nbsp;|&nbsp; Located at NH 63, Hulkoti-582205, Gadag &nbsp;|&nbsp; Expert Faculty · Conceptual Clarity · Daily Practice Tests &nbsp;&nbsp;&nbsp;
+  </span>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Admissions Open — 2025-26
+      </div>
+      <h1 class="hero-h1">
+        RTE's <span class="gold">Spoorti</span><br>PU College
+      </h1>
+      <p class="hero-sub">Hulkoti · Gadag · Karnataka</p>
+      <p class="hero-desc">
+        An integrated Pre-University institution built for excellence — combining rigorous PU academics with focused coaching for India's most competitive entrance examinations.
+      </p>
+      <div class="hero-tags">
+        <span class="hero-tag">🔬 JEE</span>
+        <span class="hero-tag">🧬 NEET</span>
+        <span class="hero-tag">📐 KCET</span>
+        <span class="hero-tag">🪖 NDA</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#admissions" class="btn-primary">Register Now →</a>
+        <a href="#streams" class="btn-secondary">Explore Streams</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-card">
+        <div class="stat-grid">
+          <div class="stat-box">
+            <div class="stat-num">3</div>
+            <div class="stat-label">Science Streams</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">4</div>
+            <div class="stat-label">Entrance Exams</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Integrated Model</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">NH63</div>
+            <div class="stat-label">Prime Location</div>
+          </div>
+        </div>
+        <p style="color:rgba(255,255,255,0.5);font-size:11px;text-align:center;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px;">Entrance Coaching For</p>
+        <div class="exam-badges">
+          <span class="exam-badge">JEE MAINS</span>
+          <span class="exam-badge">JEE ADVANCED</span>
+          <span class="exam-badge">NEET-UG</span>
+          <span class="exam-badge">KCET</span>
+          <span class="exam-badge">NDA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="max-w">
+    <div class="about-grid">
+      <div class="about-left">
+        <span class="section-label reveal">Our Story</span>
+        <h2 class="section-title reveal">Building Tomorrow's<br>Doctors, Engineers<br>&amp; Officers</h2>
+        <p class="section-desc reveal">
+          Spoorti PU College, under the banner of the Rural Technical Education Society (RTE), was established with a singular mission — to bring world-class integrated PU education to rural Karnataka. Situated on the prestigious REC campus at Hulkoti, we blend strong academic foundations with competitive exam mastery.
+        </p>
+
+        <div class="legacy-band reveal" style="margin-top:32px;">
+          <div class="legacy-avatar">
+            <img class="legacy-avatar-img" src="spoorti-assets/patil-portrait-1.png" width="76" height="76" alt="Late Shri K. H. Patil">
+          </div>
+          <div class="legacy-text">
+            <div class="legacy-late">In Memoriam</div>
+            <div class="name">Late Shri K. H. Patil</div>
+            <div class="role">Founder Chairman · RTE Society</div>
+            <div class="quote">"His vision of empowering rural youth through quality education continues to light our path."</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-right-cards">
+        <div class="about-card reveal">
+          <div class="about-icon" style="background:#eff6ff;">🏫</div>
+          <div>
+            <h4>Prestigious Campus</h4>
+            <p>Located on the sprawling Rural Engineering College campus on NH 63 at Hulkoti, Gadag — with world-class infrastructure and dedicated academic spaces for PU students.</p>
+          </div>
+        </div>
+        <div class="about-card reveal">
+          <div class="about-icon" style="background:#fff7ed;">🎯</div>
+          <div>
+            <h4>Integrated Coaching Model</h4>
+            <p>Unique dual-delivery approach: PU Board curriculum runs seamlessly alongside daily JEE, NEET, KCET &amp; NDA coaching — no need for separate institutes.</p>
+          </div>
+        </div>
+        <div class="about-card reveal">
+          <div class="about-icon" style="background:#ecfdf5;">🏆</div>
+          <div>
+            <h4>Merit-Driven Culture</h4>
+            <p>We reward hard work — scholarships based on academic merit, a free foundation course for incoming students, and structured assessments that track every student's growth.</p>
+          </div>
+        </div>
+        <div class="about-card reveal">
+          <div class="about-icon" style="background:#f5f3ff;">🌱</div>
+          <div>
+            <h4>Rural Excellence Initiative</h4>
+            <p>RTE Society's 30+ year legacy in rural Karnataka ensures every student — regardless of background — gets access to the finest education and mentorship.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STREAMS -->
+<section id="streams">
+  <div class="max-w">
+    <div class="streams-header">
+      <span class="section-label reveal">Academic Programs</span>
+      <h2 class="section-title reveal" style="color:var(--navy);">Choose Your Stream,<br>Own Your Future</h2>
+      <p class="section-desc reveal">Three science combinations, each rigorously designed to align with top national entrance examinations.</p>
+    </div>
+
+    <div class="streams-grid">
+      <!-- PCMB -->
+      <div class="stream-card pcmb reveal">
+        <div class="stream-header">
+          <div class="stream-combo">PCMB</div>
+          <div class="stream-full">Physics · Chemistry · Mathematics · Biology</div>
+        </div>
+        <div class="stream-body">
+          <h4>Subjects</h4>
+          <div class="subject-pills">
+            <span class="subject-pill">Physics</span>
+            <span class="subject-pill">Chemistry</span>
+            <span class="subject-pill">Mathematics</span>
+            <span class="subject-pill">Biology</span>
+          </div>
+          <h4>Entrance Coaching</h4>
+          <div class="stream-exams">
+            <span class="stream-exam">NEET-UG</span>
+            <span class="stream-exam">KCET</span>
+            <span class="stream-exam">JEE</span>
+          </div>
+          <p style="margin-top:16px;font-size:13px;color:var(--text-muted);">Ideal for students aiming for Medicine (MBBS/BDS), Pharmacy, Biotechnology, or Engineering.</p>
+        </div>
+      </div>
+
+      <!-- PCMC -->
+      <div class="stream-card pcmc reveal">
+        <div class="stream-header">
+          <div class="stream-combo">PCMC</div>
+          <div class="stream-full">Physics · Chemistry · Mathematics · Computer Science</div>
+        </div>
+        <div class="stream-body">
+          <h4>Subjects</h4>
+          <div class="subject-pills">
+            <span class="subject-pill">Physics</span>
+            <span class="subject-pill">Chemistry</span>
+            <span class="subject-pill">Mathematics</span>
+            <span class="subject-pill">Computer Science</span>
+          </div>
+          <h4>Entrance Coaching</h4>
+          <div class="stream-exams">
+            <span class="stream-exam">JEE</span>
+            <span class="stream-exam">KCET</span>
+            <span class="stream-exam">NDA</span>
+          </div>
+          <p style="margin-top:16px;font-size:13px;color:var(--text-muted);">Best suited for aspiring Software Engineers, Data Scientists, IIT/NIT bound students and tech enthusiasts.</p>
+        </div>
+      </div>
+
+      <!-- PCME -->
+      <div class="stream-card pcme reveal">
+        <div class="stream-header">
+          <div class="stream-combo">PCME</div>
+          <div class="stream-full">Physics · Chemistry · Mathematics · Electronics</div>
+        </div>
+        <div class="stream-body">
+          <h4>Subjects</h4>
+          <div class="subject-pills">
+            <span class="subject-pill">Physics</span>
+            <span class="subject-pill">Chemistry</span>
+            <span class="subject-pill">Mathematics</span>
+            <span class="subject-pill">Electronics</span>
+          </div>
+          <h4>Entrance Coaching</h4>
+          <div class="stream-exams">
+            <span class="stream-exam">JEE</span>
+            <span class="stream-exam">KCET</span>
+            <span class="stream-exam">NDA</span>
+          </div>
+          <p style="margin-top:16px;font-size:13px;color:var(--text-muted);">Perfect for students pursuing core engineering branches — ECE, EEE, Instrumentation, and Defense services.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY JOIN -->
+<section id="why">
+  <div class="max-w" style="position:relative;z-index:2;">
+    <div class="why-grid-wrap">
+      <div>
+        <span class="section-label">Why Spoorti?</span>
+        <h2 class="section-title reveal">Engineered<br>For Rank.</h2>
+        <p class="section-desc reveal">Every element of our program is designed with one goal: your success in PU Boards and entrance examinations.</p>
+
+        <div style="margin-top:40px;" class="reveal">
+          <div style="background:rgba(200,148,26,0.12);border:1px solid rgba(200,148,26,0.3);border-radius:14px;padding:24px;">
+            <p style="color:var(--gold-light);font-size:26px;font-family:'Playfair Display',serif;font-weight:700;margin-bottom:8px;">🎓 Scholarship</p>
+            <p style="color:rgba(255,255,255,0.7);font-size:14px;">Merit-based scholarships available on admission. Exceptional performers get significant fee waivers — academics truly rewarded.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;" class="reveal">
+          <div style="background:rgba(232,93,4,0.12);border:1px solid rgba(232,93,4,0.3);border-radius:14px;padding:24px;">
+            <p style="color:#ffaa66;font-size:26px;font-family:'Playfair Display',serif;font-weight:700;margin-bottom:8px;">📚 Free Foundation Course</p>
+            <p style="color:rgba(255,255,255,0.7);font-size:14px;">Every incoming student gets access to a free foundation course to bridge gaps and hit the ground running from Day 1.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-cards">
+        <div class="why-card reveal">
+          <div class="why-icon">👨‍🏫</div>
+          <h3>Expert Faculty</h3>
+          <p>Learn from the best mentors — experienced educators with proven track records in training NEET &amp; JEE qualifiers.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">🧠</div>
+          <h3>Conceptual Clarity</h3>
+          <p>We focus on deep understanding, not rote learning. Strong fundamentals that give you a real competitive edge.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">📝</div>
+          <h3>Daily Practice Tests</h3>
+          <p>Structured daily assessments, mock tests, and papers modeled on actual JEE, NEET, and KCET patterns.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">📊</div>
+          <h3>Performance Tracking</h3>
+          <p>Regular progress reports and parent feedback sessions to ensure every student stays on target.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">🏕️</div>
+          <h3>Campus Living</h3>
+          <p>Safe, well-equipped hostel facilities on the REC campus with a focused academic environment.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">🤝</div>
+          <h3>Holistic Growth</h3>
+          <p>Beyond academics — personality development, time management skills, and counselling for well-rounded success.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership">
+  <div class="max-w">
+    <div style="text-align:center;margin-bottom:56px;">
+      <span class="section-label reveal">Leadership</span>
+      <h2 class="section-title reveal" style="color:var(--navy);">The Visionaries<br>Behind Spoorti</h2>
+    </div>
+
+    <div class="leadership-grid">
+      <div class="leader-card reveal">
+        <div class="leader-avatar">
+          <img src="spoorti-assets/patil-portrait-1.png" width="120" height="120" alt="Late Shri K. H. Patil">
+        </div>
+        <div class="leader-late">In Memoriam</div>
+        <div class="leader-name">Late Shri K. H. Patil</div>
+        <div class="leader-role">Founder Chairman</div>
+        <div class="leader-org">Rural Technical Education Society</div>
+        <p style="font-size:13px;color:var(--text-muted);margin-top:14px;line-height:1.65;">A pioneer in rural education, Shri K. H. Patil's lifelong vision was to bring premium technical and academic education to Karnataka's rural heartland. His legacy inspires every student who walks through Spoorti's doors.</p>
+      </div>
+
+      <div class="leader-card reveal">
+        <div class="leader-avatar">
+          <img src="spoorti-assets/patil-secretary.png" width="120" height="120" alt="Shri Sachin D. Patil, Secretary">
+        </div>
+        <div class="leader-name">Shri Sachin D. Patil</div>
+        <div class="leader-role">Secretary</div>
+        <div class="leader-org">Rural Technical Education Society</div>
+        <p style="font-size:13px;color:var(--text-muted);margin-top:14px;line-height:1.65;">Carrying forward the founder's mission with renewed energy and modern vision, Shri Sachin D. Patil spearheads the establishment of Spoorti PU College as a beacon of integrated excellence in the region.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSIONS -->
+<section id="admissions">
+  <div class="max-w">
+    <div class="admit-grid">
+      <div class="admit-left">
+        <span class="section-label reveal">Admissions 2025-26</span>
+        <h2 class="section-title reveal">Your Journey<br>Starts Here</h2>
+        <p class="section-desc reveal">Seats are limited. Begin your application today and take the first step toward cracking JEE, NEET, KCET or NDA.</p>
+
+        <div class="process-steps">
+          <div class="step reveal">
+            <div class="step-num">1</div>
+            <div class="step-text">
+              <h4>Enquiry &amp; Counselling</h4>
+              <p>Call or visit us. Our academic counsellors will guide you to the right stream.</p>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="step-num">2</div>
+            <div class="step-text">
+              <h4>Fill Application Form</h4>
+              <p>Submit the admission form with 10th marks card and documents.</p>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="step-num">3</div>
+            <div class="step-text">
+              <h4>Merit Scholarship Test</h4>
+              <p>Appear for our entrance test to qualify for merit-based scholarships.</p>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="step-num">4</div>
+            <div class="step-text">
+              <h4>Confirm Admission</h4>
+              <p>Complete fee payment and join the free foundation course immediately.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="admit-card reveal">
+        <h3>What You Get at Spoorti</h3>
+        <ul class="benefit-list">
+          <li><span class="check">✓</span> Dual-certification: PU Board + Entrance Coaching</li>
+          <li><span class="check">✓</span> Free Foundation Course for all new students</li>
+          <li><span class="check">✓</span> Merit Scholarships — reduce your fee burden</li>
+          <li><span class="check">✓</span> Daily Practice Papers &amp; Mock Tests</li>
+          <li><span class="check">✓</span> Expert faculty with IIT/AIIMS coaching experience</li>
+          <li><span class="check">✓</span> Individual performance tracking &amp; reporting</li>
+          <li><span class="check">✓</span> Hostel &amp; campus facilities on REC grounds</li>
+          <li><span class="check">✓</span> Preparation for JEE, NEET, KCET and NDA</li>
+        </ul>
+
+        <div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);">
+          <p style="color:rgba(255,255,255,0.5);font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;">Call to Register</p>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <a href="tel:+917019944673" style="color:var(--gold-light);text-decoration:none;font-size:18px;font-weight:700;font-family:'Bebas Neue',sans-serif;letter-spacing:2px;">📞 70199 44673</a>
+            <a href="tel:+919448023499" style="color:var(--gold-light);text-decoration:none;font-size:18px;font-weight:700;font-family:'Bebas Neue',sans-serif;letter-spacing:2px;">📞 94480 23499</a>
+            <a href="tel:+919742021640" style="color:var(--gold-light);text-decoration:none;font-size:18px;font-weight:700;font-family:'Bebas Neue',sans-serif;letter-spacing:2px;">📞 97420 21640</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location">
+  <div class="max-w">
+    <div style="text-align:center;margin-bottom:56px;">
+      <span class="section-label reveal">Find Us</span>
+      <h2 class="section-title reveal" style="color:var(--navy);">Visit Spoorti<br>PU College</h2>
+    </div>
+
+    <div class="location-inner">
+      <div class="map-wrap">
+      <iframe
+        class="map-frame"
+        src="https://www.google.com/maps?q=15.4217569%2C75.564338&amp;z=17&amp;hl=en&amp;output=embed"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="RTE Society's Rural Engineering College — campus location">
+      </iframe>
+      <a class="map-open-link" href="https://maps.app.goo.gl/f3Habr3DtJzq9Kcj8" target="_blank" rel="noopener noreferrer">Open in Google Maps →</a>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-card reveal">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Address</h4>
+            <p>RTE's Spoorti PU College<br>Rural Engineering College Campus<br>NH 63, Hulkoti – 582205<br>Gadag District, Karnataka</p>
+          </div>
+        </div>
+        <div class="contact-card reveal">
+          <div class="contact-icon">📞</div>
+          <div>
+            <h4>Phone Numbers</h4>
+            <a href="tel:+917019944673">7019944673</a>
+            <a href="tel:+919448023499">9448023499</a>
+            <a href="tel:+919742021640">9742021640</a>
+          </div>
+        </div>
+        <div class="contact-card reveal">
+          <div class="contact-icon">🕘</div>
+          <div>
+            <h4>Office Hours</h4>
+            <p>Monday – Saturday<br>9:00 AM – 5:00 PM<br><span style="font-size:12px;color:var(--text-muted);">Sundays by appointment only</span></p>
+          </div>
+        </div>
+        <div class="contact-card reveal">
+          <div class="contact-icon">🚌</div>
+          <div>
+            <h4>How to Reach</h4>
+            <p style="font-size:13px;">On National Highway 63 between Hubli and Gadag. 15 km from Gadag city. Buses from Gadag, Dharwad &amp; Hubli stop at Hulkoti.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">RTE's Spoorti PU College</div>
+  <p>NH 63, Hulkoti – 582205, Gadag, Karnataka &nbsp;|&nbsp; Under Rural Technical Education Society</p>
+  <div class="footer-divider"></div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#streams">Streams</a>
+    <a href="#why">Why Join</a>
+    <a href="#leadership">Leadership</a>
+    <a href="#admissions">Admissions</a>
+    <a href="#location">Contact</a>
+    <a href="tel:+917019944673">📞 70199 44673</a>
+  </div>
+  <div class="footer-divider"></div>
+  <p style="font-size:12px;">© 2025 Rural Technical Education Society · All Rights Reserved · Empowering Rural Karnataka Since Decades</p>
+</footer>
+
+<!-- FLOATING BUTTON -->
+<a href="tel:+917019944673" class="float-btn">📞 Register Now</a>
+
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(el => observer.observe(el));
+
+// Nav active highlight on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
+  });
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current ? '#e8b84b' : '';
+  });
+});
+</script>
+</body>
+</html>
