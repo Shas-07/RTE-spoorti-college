@@ -21,6 +21,8 @@
   --text-muted: #5c5c78;
   --shadow-sm: 0 2px 12px rgba(12, 20, 56, 0.06);
   --shadow-md: 0 12px 40px rgba(12, 20, 56, 0.1);
+  --crimson: #a51d24;
+  --cream-panel: #fdfbf7;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -473,6 +475,68 @@ section { padding: 90px 5%; }
 }
 .map-open-link:hover { background: var(--navy-light); transform: translateY(-1px); }
 
+.distance-illustration {
+  margin-bottom: 56px;
+  text-align: center;
+}
+.distance-illustration-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 28px 28px 32px;
+  background: linear-gradient(180deg, var(--cream-panel) 0%, #f5f0e8 100%);
+  border-radius: 22px;
+  border: 1px solid rgba(15, 25, 82, 0.1);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+.distance-illustration-inner::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0; width: 4px;
+  background: linear-gradient(180deg, var(--crimson), var(--gold));
+}
+.distance-illustration .dist-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--crimson);
+  margin-bottom: 10px;
+}
+.distance-illustration h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.2rem, 2.8vw, 1.5rem);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.35;
+  margin-bottom: 8px;
+  padding: 0 8px;
+}
+.distance-illustration .dist-sub {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 22px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+.distance-illustration figure {
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(165, 29, 36, 0.18);
+  background: var(--white);
+  box-shadow: 0 4px 24px rgba(12, 20, 56, 0.07);
+}
+.distance-illustration img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .contact-info { display: flex; flex-direction: column; gap: 20px; }
 .contact-card {
   background: var(--white); border-radius: 14px; padding: 22px 24px;
@@ -543,6 +607,7 @@ footer p { font-size: 13px; }
 
 /* ── RESPONSIVE ── */
 @media(max-width: 900px) {
+  .distance-illustration-inner { padding: 22px 16px 26px; }
   .hero-inner, .about-grid, .why-grid-wrap, .admit-grid, .location-inner { grid-template-columns: 1fr; gap: 40px; }
   .streams-grid { grid-template-columns: 1fr; }
   .leadership-grid { grid-template-columns: 1fr; max-width: 400px; }
@@ -955,6 +1020,17 @@ footer p { font-size: 13px; }
     <div style="text-align:center;margin-bottom:56px;">
       <span class="section-label reveal">Find Us</span>
       <h2 class="section-title reveal" style="color:var(--navy);">Visit Spoorti<br>PU College</h2>
+    </div>
+
+    <div class="distance-illustration reveal">
+      <div class="distance-illustration-inner">
+        <span class="dist-label">How to reach</span>
+        <h3>Distance illustration from REC Hulkoti<br><span style="font-size:0.82em;font-weight:500;color:var(--text-muted);letter-spacing:0.02em;">Gadag District, Karnataka</span></h3>
+        <p class="dist-sub">Road distances from the Rural Engineering College campus to key cities in the region — same campus as Spoorti PU College.</p>
+        <figure>
+          <img src="spoorti-assets/distance-map-rec-hulkoti.png" alt="Infographic map of Karnataka showing distances from REC Hulkoti to Belagavi (147 km), Hubballi (48 km), Laxmeshwara (43 km), and Gadag (9 km)." width="640" height="900" loading="lazy" decoding="async">
+        </figure>
+      </div>
     </div>
 
     <div class="location-inner">
